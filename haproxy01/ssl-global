@@ -1,0 +1,15 @@
+SSLEngine On
+SSLProtocol all -SSLv2 -SSLv3
+SSLCipherSuite HIGH:!aNULL:!MD5:!SEED:!IDEA:!RC4
+SSLCertificateFile /etc/httpd/certs/star_example_com/star.example.com.crt
+SSLCertificateKeyFile /etc/httpd/certs/star_example_com/star.example.com.key
+SSLCertificateChainFile /etc/httpd/certs/star_example_com/star.example.com.intermediates
+<Files ~ "\.(cgi|shtml|phtml|php3?)$">
+    SSLOptions +StdEnvVars
+</Files>
+<Directory "/var/www/cgi-bin">
+    SSLOptions +StdEnvVars
+</Directory>
+BrowserMatch "MSIE [2-5]" \
+	 nokeepalive ssl-unclean-shutdown \
+	 downgrade-1.0 force-response-1.0
