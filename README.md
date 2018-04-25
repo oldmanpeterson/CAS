@@ -1,6 +1,6 @@
 # CAS
 Config files required for load-balanced CAS setup.
-This setup can easily handle the needs of a group of 300 people authenticating from time to time during the day.
+This setup can easily handle the needs of a group of 300 people (probably much, much more; I just don't care/know) authenticating from time to time during the day.
 
 Key features include:
   * Loadbalancing and failover of loadbalancers
